@@ -94,7 +94,7 @@ const StyledButton = styled.button.attrs(({ type, size, color, variant }) => ({
   font-size: 16px;
   line-height: 22px;
   border: 1px solid;
-  border-radius: ${Radius.4};
+  border-radius: ${Radius.R4};
   cursor: pointer;
 
   &:disabled {
