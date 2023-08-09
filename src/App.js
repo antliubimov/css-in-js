@@ -10,6 +10,7 @@ import { Icon } from './elements/icon';
 import { TextButtonSize, TextButtonColor, TextButton } from './elements/text-button';
 import { IconButton } from './elements/icon-button';
 import { ButtonSize, ButtonColor, ButtonVariant, Button } from './elements/button';
+import { Toggle } from './elements/toggle';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
       <TextButton size={TextButtonSize.LARGE} color={TextButtonColor.ORANGE}>text-button</TextButton>
 
       <IconButton>
-        <Icon name={IconName.USER} />
+        <Icon name={IconName.BAR_CHART} />
       </IconButton>
       <IconButton>
         <Icon name={IconName.MENU} />
@@ -39,6 +40,7 @@ function App() {
         Button
       </Button>
 
+      <Toggle label="Toogle"/>
     </>
   );
 }
