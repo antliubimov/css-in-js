@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { BaseButton } from '../helpers/base-button';
 import { Color } from '../tokens/colors';
 import { Radius } from '../tokens/radiuses';
 
@@ -75,8 +76,7 @@ const ButtonSizeToCSS = {
   `,
 };
 
-const StyledButton = styled.button.attrs(({ type, size, color, variant }) => ({
-  type: type || 'button',
+const StyledButton = styled(BaseButton).attrs(({ size, color, variant }) => ({
   size: size || ButtonSize.MEDIUM,
   color: color || ButtonColor.ORANGE,
   variant: variant || ButtonVariant.FILLED,
@@ -90,12 +90,18 @@ const StyledButton = styled.button.attrs(({ type, size, color, variant }) => ({
   align-items: center;
   font-size: 16px;
   line-height: 22px;
-  border: 1px solid;
+  border-width: 1px;
+  border-style: solid;
   border-radius: ${Radius.R4};
+  gap: 4px;
   cursor: pointer;
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  svg {
+    color: currentColor;
   }
 `;
 
