@@ -75,9 +75,6 @@ const ButtonSizeToCSS = {
   `,
 };
 
-
-
-
 const StyledButton = styled.button.attrs(({ type, size, color, variant }) => ({
   type: type || 'button',
   size: size || ButtonSize.MEDIUM,
