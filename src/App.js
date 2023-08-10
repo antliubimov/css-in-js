@@ -11,6 +11,9 @@ import { TextButtonSize, TextButtonColor, TextButton } from './elements/text-but
 import { IconButton } from './elements/icon-button';
 import { ButtonSize, ButtonColor, ButtonVariant, Button } from './elements/button';
 import { Toggle } from './elements/toggle';
+import { Input } from './elements/input';
+import { Filter } from './elements/filter';
+import { Select } from './elements/select';
 
 function App() {
   return (
@@ -40,7 +43,22 @@ function App() {
         Button
       </Button>
 
-      <Toggle label="Toogle"/>
+      <Toggle label="Toogle" />
+
+      <Input />
+
+      <Filter label='Категория товаров'>
+        <option>Оправы</option>
+        <option>Линзы</option>
+        <option>Очки</option>
+      </Filter>
+
+       <Select label='Категория великов'>
+        <option>Прогулочные</option>
+        <option>Трековые</option>
+        <option>Горные</option>
+      </Select>
+
     </>
   );
 }

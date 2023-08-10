@@ -16,7 +16,7 @@ const StyledToggle = styled(BaseButton)`
   width: 22px;
   height: 22px;
 
-  &:: before {
+  &::before {
     content: '';
     position: absolute;
     top: 8px;
@@ -27,7 +27,7 @@ const StyledToggle = styled(BaseButton)`
     background-color: ${Color.GRAY_10};
   }
 
-  &:: after {
+  &::after {
     content: '';
     position: absolute;
     top: 6px;
@@ -39,7 +39,7 @@ const StyledToggle = styled(BaseButton)`
   }
 
   &[aria-checked='true'] {
-    &:: before {
+    &::before {
       background-color: ${Color.ORANGE_10};
     }
 
