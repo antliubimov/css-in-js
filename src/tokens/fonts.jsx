@@ -7,7 +7,7 @@ import delaGothicOneRegular from '../fonts/dela-gothic-one-regular.woff2';
 
 const Font = {
   COMMISIONER: 'var(--font-commisioner)',
-  DELAGOTHIC: 'var(--font-dela-gothic-one)',
+  DELA_GOTHIC_ONE: 'var(--font-dela-gothic-one)',
 };
 
 const GlobalFonts = createGlobalStyle`

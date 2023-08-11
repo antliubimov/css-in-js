@@ -8,9 +8,9 @@ const Shadow = {
 
 const GlobalShadows = createGlobalStyle`
   :root {
-    --shadow-card-default-child: 0px 4px 10px rgba(0, 0, 0, 0.07);
-    --shadow-card-hover-or-focus-adult: 0px 0px 0px 1px #FF833E;
-    --shadow-card-hover-or-focus-child: 0px 0px 0px 1px #5FCB45;
+    --shadow-card-default-child: 0px 4px 10px rgba(0, 0, 0, 0.07) inset;
+    --shadow-card-hover-or-focus-adult: 0px 0px 0px 1px #FF833E inset;
+    --shadow-card-hover-or-focus-child: 0px 0px 0px 1px #5FCB45 inset;
   }
 `;
 

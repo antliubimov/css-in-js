@@ -5,17 +5,20 @@ import { GlobalRadiuses } from './tokens/radiuses';
 import { GlobalResets } from './tokens/resets';
 import { IconName, SpriteWithIcons } from './tokens/icons';
 
-import { TypographyVariant, Typography } from './elements/typography';
-import { Icon } from './elements/icon';
-import { TextButtonSize, TextButton } from './elements/text-button';
-import { IconButton } from './elements/icon-button';
-import { ButtonSize, ButtonColor, ButtonVariant, Button } from './elements/button';
-import { Toggle } from './elements/toggle';
-import { Input } from './elements/input';
-import { Filter } from './elements/filter';
-import { Select } from './elements/select';
+// import { TypographyVariant, Typography } from './elements/typography';
+// import { Icon } from './elements/icon';
+// import { TextButtonSize, TextButton } from './elements/text-button';
+// import { IconButton } from './elements/icon-button';
+// import { ButtonSize, ButtonColor, ButtonVariant, Button } from './elements/button';
+// import { Toggle } from './elements/toggle';
+// import { Input } from './elements/input';
+// import { Filter } from './elements/filter';
+// import { Select } from './elements/select';
 
 import { CategoryCard } from './components/category-card';
+import { NewsCard } from './components/news-card';
+import { ProductCard } from './components/product-card';
+import { Banner, BannerSize } from './components/banner';
 
 function App() {
   return (
@@ -27,41 +30,55 @@ function App() {
       <GlobalRadiuses />
       <SpriteWithIcons />
 
-      <Typography as='h1' variant={TypographyVariant.TITLE_3}>asdfa</Typography>
-      <Icon name={IconName.BIKE_ADULT} />
-      <Icon name={IconName.BIKE_CHILD} color={Color.GREEN_30} />
 
-      <TextButton size={TextButtonSize.LARGE}>text-button</TextButton>
 
-      <IconButton>
-        <Icon name={IconName.BAR_CHART} />
-      </IconButton>
-      <IconButton>
-        <Icon name={IconName.MENU} />
-      </IconButton>
+      <CategoryCard
+        name='Прогулочные'
+        amount='189 моделей'
+        image='/images/categories/1.jpg'
+        imageAlt='Красный прогулочный велик'
+      />
 
-      <Button size={ButtonSize.LARGE}>
-        <Icon name={IconName.BIKE_ADULT} />
-        Button
-      </Button>
+      <NewsCard
+        title='Велопробег в Москве'
+        date='02.04.2022'
+        image='/images/news/1.jpg'
+        imageAlt='Велосипедисты едут по дороге в пасмурный день'
+      />
 
-      <Toggle label="Toogle" />
+      <ProductCard
+        name='Велик BMC'
+        price='94 000 ₽'
+        image='/images/products/1.jpg'
+        imageAlt='Серый велик с чёрными ободами'
+        hit
+        novelty
+        discount
+      />
 
-      <Input />
+       <ProductCard
+        name='Велик BMC'
+        price='94 000 ₽'
+        image='/images/products/1.jpg'
+        imageAlt='Серый велик с чёрными ободами'
+        hit
+        novelty
+        discount
+        unavailable
+      />
 
-      <Filter label='Категория товаров'>
-        <option>Оправы</option>
-        <option>Линзы</option>
-        <option>Очки</option>
-      </Filter>
-
-       <Select label='Категория великов'>
-        <option>Прогулочные</option>
-        <option>Трековые</option>
-        <option>Горные</option>
-      </Select>
-
-      <CategoryCard name='Прогулочные' image='' amount='180'></CategoryCard>
+       <Banner
+        title='Трековые велики'
+        image='/images/banners/1.jpg'
+        imageAlt='Чёрный трековый велик на фоне серой стены'
+      />
+      <Banner
+        size={BannerSize.LARGE}
+        title='Трековые велики'
+        discount='50%'
+        image='/images/banners/1.jpg'
+        imageAlt='Чёрный трековый велик на фоне серой стены'
+      />
 
     </>
   );
