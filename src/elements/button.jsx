@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { BaseButton } from '../helpers/base-button';
 import { Color } from '../tokens/colors';
@@ -76,11 +77,7 @@ const ButtonSizeToCSS = {
   `,
 };
 
-const StyledButton = styled(BaseButton).attrs(({ size, color, variant }) => ({
-  size: size || ButtonSize.MEDIUM,
-  color: color || ButtonColor.ORANGE,
-  variant: variant || ButtonVariant.FILLED,
-}))`
+const CSS = css`
   ${({ size }) => ButtonSizeToCSS[size]}
   ${({ color }) => ButtonColorToCSS[color]}
   ${({ variant }) => ButtonVariantToCSS[variant]}
@@ -96,13 +93,23 @@ const StyledButton = styled(BaseButton).attrs(({ size, color, variant }) => ({
   gap: 4px;
   cursor: pointer;
 
-  &:disabled {
-    cursor: not-allowed;
-  }
-
   svg {
     color: currentColor;
   }
 `;
 
-export { ButtonSize, ButtonColor, ButtonVariant, StyledButton as Button };
+const attrsFactory = ({ size, color, variant }) => ({
+  size: size || ButtonSize.MEDIUM,
+  color: color || ButtonColor.ORANGE,
+  variant: variant || ButtonVariant.FILLED,
+});
+
+const StyledButton = styled(BaseButton).attrs(attrsFactory)`
+  ${CSS}
+`;
+
+const StyledLink = styled(Link).attrs(attrsFactory)`
+  ${CSS}
+`;
+
+export { ButtonSize, ButtonColor, ButtonVariant, StyledButton as Button, StyledLink as Link };

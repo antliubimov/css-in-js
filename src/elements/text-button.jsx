@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { BaseButton } from '../helpers/base-button';
 import { Color } from '../tokens/colors';
@@ -11,24 +12,18 @@ const TextButtonSize = {
 const TextButtonSizeToCSS = {
   [TextButtonSize.MEDIUM]: css`
     font-size: 14px;
-    font-weight: 400;
     line-height: 18px;
   `,
   [TextButtonSize.LARGE]: css`
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
   `,
 };
 
-const TextButtonColor = {
-  ORANGE: 'orange',
-  GREEN: 'green',
-};
+const CSS = css`
+  ${({ size }) => TextButtonSizeToCSS[size]}
 
-const TextButtonColorToCSS = {
-  [TextButtonColor.ORANGE]: css`
-    color: ${Color.WHITE};
+   color: ${Color.WHITE};
     &:hover,
     &:focus {
       color: ${Color.ORANGE_20};
@@ -41,30 +36,19 @@ const TextButtonColorToCSS = {
     &:disabled {
       color: ${Color.GRAY_30};
     }
-  `,
-  [TextButtonColor.GREEN]: css`
-    color: ${Color.GRAY_60};
-    &:hover,
-    &:focus {
-      color: ${Color.GREEN_20};
-    }
-
-    &:active {
-      color: ${Color.GREEN_40};
-    }
-
-    &:disabled {
-      color: ${Color.GRAY_30};
-    }
-  `,
-}
-
-const StyledTextButton = styled(BaseButton).attrs(({ size, color }) => ({
-  size: size || TextButtonSize.MEDIUM,
-  color: color || TextButtonColor.ORANGE
-}))`
-  ${({ size }) => TextButtonSizeToCSS[size]}
-  ${({ color }) => TextButtonColorToCSS[color]}
 `;
 
-export { TextButtonSize, TextButtonColor, StyledTextButton as TextButton };
+const attrsFactory = ({ size, color }) => ({
+  size: size || TextButtonSize.MEDIUM,
+});
+
+
+const StyledTextButton = styled(BaseButton).attrs(attrsFactory)`
+  ${CSS}
+`;
+
+const StyledTextLink = styled(Link).attrs(attrsFactory)`
+  ${CSS}
+`;
+
+export { TextButtonSize, StyledTextButton as TextButton, StyledTextLink as Link };
